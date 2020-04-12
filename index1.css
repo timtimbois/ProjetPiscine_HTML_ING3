@@ -1,0 +1,14 @@
+body{
+	background-color: silver;
+}
+
+h1{
+	text-align: center;
+	padding-top: 20px; 
+	padding-bottom: 20px;
+}
+
+a{
+	display : block;
+	margin: auto;
+}
