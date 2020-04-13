@@ -1,3 +1,5 @@
+/* PAGE ACCUEIL . HTML */
+
 body {
 	padding: 0px;
 	margin: 0px;
@@ -55,6 +57,10 @@ a{
 
 }
 
+.buttconn {
+
+}
+
 .page-footer {
 	background-color: #222;
 	color: #ccc;
@@ -70,3 +76,8 @@ a{
 	font-weight: bolder;
 	font-size: 13px;
 }
+
+
+
+/*PAGE LOGIN . HTML*/
+
