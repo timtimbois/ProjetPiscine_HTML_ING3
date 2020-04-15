@@ -13,10 +13,14 @@ $database = "projetpiscineweb";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
  
+$erreur = "";
+
+if ($login == "") {$erreur .= "Le champ E-mail est vide. <br>";}
+if ($MDP == "") {$erreur .= "Le champ Mot de Passe est vide. <br>";}
 
 // Bouton Connexion
 
-
+if ($erreur == "") {
 if (isset($_POST['button2'])) {
 
 	if ($db_found) {
@@ -39,11 +43,21 @@ if (isset($_POST['button2'])) {
 		echo "Acheteur not found";
 	} else {
 		while ($data = mysqli_fetch_assoc($result)) {
-
-		$_SESSION['IDAcheteur']=$data['IDAcheteur'];
 		$_SESSION['NomAcheteur']=$data['NomAcheteur'];
-		$_SESSION['PrenomAcheteur']=$data['PrenomAcheteur'];
-		$_SESSION['EmailAcheteur']=$data['EmailAcheteur'];
+$_SESSION['PrenomAcheteur']=$data['PrenomAcheteur'];
+$_SESSION['EmailAcheteur']=$data['EmailAcheteur'];
+$_SESSION['MDPAcheteur']=$data['MDPAcheteur'];
+$_SESSION['AdresseLigne1Acheteur']=$data['AdresseLigne1Acheteur'];
+$_SESSION['AdresseLigne2Acheteur']=$data['AdresseLigne2Acheteur'];
+$_SESSION['VilleAcheteur']=$data['VilleAcheteur'];
+$_SESSION['CodePostalAcheteur']=$data['CodePostalAcheteur'];
+$_SESSION['PaysAcheteur']=$data['PaysAcheteur'];
+$_SESSION['NumAcheteur']=$data['NumAcheteur'];
+$_SESSION['TypeCarteAcheteur']=$data['TypeCarteAcheteur'];
+$_SESSION['NumCarteAcheteur']=$data['NumCarteAcheteur'];
+$_SESSION['NomCarteAcheteur'] =$data['NomCarteAcheteur'];
+$_SESSION['DatedExpAcheteur']=$data['DatedExpAcheteur'];
+$_SESSION['CodeSecuAcheteur']=$data['CodeSecuAcheteur'];
 
 		 ?>
 
@@ -63,7 +77,7 @@ if (isset($_POST['button2'])) {
 		<a href="PageAccueil.html"><input type="button" value="Accueil" class="button"></a>
 		<input type="button" value="Catégories" class="button">
 		<input type="button" value="Achat" class="button">
-		<input type="button" value="MonCompte" class="button">
+		<a href="CompteAcheteur.php"><input type="button" value="MonCompte" class="button"></a>
 		<input type="button" value="Admin" class="button">
 	</div>
 
@@ -153,7 +167,7 @@ if (isset($_POST['button2'])) {
 </div>
 <br>
 <div id="section2">
-	<p>Bienvenue sur votre compte ! Je vous laisse profiter du site. Bons achats à vous </p>
+	<p>Bienvenue sur votre compte ! Je vous laisse profiter du site. Bonnes ventes à vous </p>
 </div>
 
 	<footer class="page-footer">
@@ -192,6 +206,9 @@ if (isset($_POST['button2'])) {
 		echo "Database not found";
 	}
 }
-
+	}
+else{
+	echo "Erreur : $erreur";
+}
 
 ?>
