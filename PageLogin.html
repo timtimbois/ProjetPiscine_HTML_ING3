@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>EbayECE : Login</title>
 	<meta charset="utf-8">
-	<title>EnchèresECE</title>
 	<link rel="stylesheet" type="text/css" href="index1.css">
 </head>
 <body>
+	<!-- 
+
+	<h1>Bienvenue sur le site d'enchère de Dany et Timothée. Veuillez cliquer sur le bouton pour pouvoir vous connecter.</h1>
+	<a href="PageLogin.html"><button style="text">Appuyez ici et profitez du fabuleux site des enchères</button></a>
+
+-->
+
+<div id="header"> 
 	<h1>Login</h1>
+
+	<div id="btn-group">
+		<input type="button" value="Accueil" class="button">
+		<input type="button" value="Catégories" class="button">
+		<input type="button" value="Achat" class="button">
+		<input type="button" value="Vendre" class="button">
+		<input type="button" value="MonCompte" class="button">
+		<input type="button" value="Admin" class="button">
+	</div>
+
+</div>
+<br>
+<div id="section2">
+	<h2>Formulaire de connexion</h2>
+        <form action="PageLogin.php" method="post">
+            <table>
+                <tr>
+                    <td>E-mail :</td>
+                    <td><input type="text" name="Login"></td>
+                </tr>
+                
+                <tr>
+                    <td>Mot de passe :</td>
+                    <td><input type="password" name="MDP"></td>
+                </tr>
+                
+                <tr>
+                    <td>Type d'utilisateur :</td>
+                    <td><select name="type">
+                        <option>Acheteur
+                        <option>Vendeur
+                    </select></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="button2" value="Connexion">
+                        
+                    </td>
+                </tr>
+                
+            </table>
+            
+        </form>
+
+        <h2>Formulaire d'inscription</h2>
+        <p>Veuillez choisir entre vous inscrire ent tant qu'acheteur ou en tant que vendeur</p>
+        <br>
+        <br>
+        <a href="InscriptionAcheteur.html"><button>Acheteur</button></a>
+        <a href="InscriptionVendeur.html"><button>Vendeur</button></a>
+</div>
+
+	<footer class="page-footer">
+		
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<h6 class="text-up">Contact</h6>
+				<p>
+					37, quai de Grenelle, 75015 Paris, France <br>
+					info@ebay.ece.fr <br>
+					+33 01 02 03 04 05 <br>
+					+33 01 03 02 05 04
+				</p>
+			</div>
+		</div>
+
+		<div class="footer-copyright text-center">
+			&copy; 2020 Copyright | Droit d'auteur: Tim et Dany
+			<a href="mailto:dany.tadrous.edu.ece.fr">dany.tadrous@edu.ece.fr</a>
+
+		</div>
+	</footer>
+
+
 </body>
 </html>
