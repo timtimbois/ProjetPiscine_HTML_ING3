@@ -1,44 +1,36 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>EbayECE : Accueil</title>
+	<title>EbayECE : Login</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="index1.css">
 </head>
+
 <body>
-	<!-- 
-
-	<h1>Bienvenue sur le site d'enchère de Dany et Timothée. Veuillez cliquer sur le bouton pour pouvoir vous connecter.</h1>
-	<a href="PageLogin.html"><button style="text">Appuyez ici et profitez du fabuleux site des enchères</button></a>
-
--->
-
 <div id="header"> 
-	<h1>BIENVENUE</h1>
+	<h1>Bonjour <?php echo $_SESSION['PseudoVendeur']; ?></h1>
 
 	<div id="btn-group">
-		<input type="button" value="Accueil" class="button">
+		<a href="PageAccueil.html"><input type="button" value="Accueil" class="button"></a>
 		<input type="button" value="Catégories" class="button">
-		<input type="button" value="Achat" class="button">
 		<input type="button" value="Vendre" class="button">
-		<input type="button" value="MonCompte" class="button">
+		<a href="CompteVendeur.php"><input type="button" value="MonCompte" class="button"></a>
 		<input type="button" value="Admin" class="button">
 	</div>
 
 </div>
-
-<div id="section">
-	<br>
-	<br>
-	<h2>EBAY ECE</h2>
-	<h3>Et vous, vous achetez comment ?</h3>
-	<h3>Buy it. Sell it. Love it</h3>
-	<p1>Achetez et vendez des produits qui vous conviennent</p1>
-	<br>
-	<br>
-	<a href="PageLogin.html"> <button class="button">Connectez-vous</button> </a>
-
-
+<br>
+<div id="section2">
+	<p>ID : <?php echo $_SESSION['IDVendeur'] ?> <br>
+	Pseudo: <?php echo $_SESSION['PseudoVendeur']; ?> <br>
+	Email: <?php echo $_SESSION['EmailVendeur']; ?>  <br>
+	Nom:  <?php echo $_SESSION['NomVendeur']; ?> <br>
+	Photo: <?php echo $_SESSION['PhotoVendeur']; ?> <br>
+	Image : <?php echo $_SESSION['ImageVendeur']; ?></p>
 </div>
 
 	<footer class="page-footer">

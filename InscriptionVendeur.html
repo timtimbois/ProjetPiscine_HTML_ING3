@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>EbayECE : Accueil</title>
+	<title>EbayECE : Login</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="index1.css">
 </head>
@@ -14,7 +14,7 @@
 -->
 
 <div id="header"> 
-	<h1>BIENVENUE</h1>
+	<h1>Login</h1>
 
 	<div id="btn-group">
 		<input type="button" value="Accueil" class="button">
@@ -26,19 +26,48 @@
 	</div>
 
 </div>
+<br>
+<div id="section2">
 
-<div id="section">
-	<br>
-	<br>
-	<h2>EBAY ECE</h2>
-	<h3>Et vous, vous achetez comment ?</h3>
-	<h3>Buy it. Sell it. Love it</h3>
-	<p1>Achetez et vendez des produits qui vous conviennent</p1>
-	<br>
-	<br>
-	<a href="PageLogin.html"> <button class="button">Connectez-vous</button> </a>
+	<h2>Vendeur</h2>
+        <form action="InscriptionVendeur.php" method="post">
+            <table>
+                
+                <tr>
+                    <td>Email :</td>
+                    <td><input type="text" name="EmailVendeur"></td>
+                </tr>
 
+                <tr>
+                    <td>Pseudo :</td>
+                    <td><input type="password" name="PseudoVendeur"></td>
+                </tr>
+                
+                <tr>
+                    <td>Nom :</td>
+                    <td><input type="text" name="NomVendeur"></td>
+                </tr>
 
+                <tr>
+                    <td>Photo :</td>
+                    <td><input type="text" name="PhotoVendeur"></td>
+                </tr>
+                
+                <tr>
+                    <td>Image :</td>
+                    <td><input type="text" name="ImageVendeur"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="button" value="Inscription">
+                        
+                    </td>
+                </tr>
+                
+            </table>
+            
+        </form>
 </div>
 
 	<footer class="page-footer">
