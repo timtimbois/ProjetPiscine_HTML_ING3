@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +8,14 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>EbayECE : Votre Compte</title>
+	<title>EbayECE : Admin</title>
 
 
 	<!-- Bootstrap CSS CDN -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
 	<!-- MAKE A LINK WITH THE CSS TO CUSTOME IT -->
-	<link href="index1.css" rel="stylesheet">
+	<link href="AdminLogin.css" rel="stylesheet">
 
 	<!-- SCROLLBAR CUSTOM CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -28,7 +27,6 @@ session_start();
 	<!-- LIEN CSS POUR AVOIR LES ICONES TELECHARGÉES DEPUIS ICOMOON -->
 	<link href="style.css" rel="stylesheet">
 
-
 </head>
 
 <body >
@@ -39,76 +37,49 @@ session_start();
 		<!-- Sidebar -->
 		<nav id="sidebar">
 			<div class="sidebar-header">
-				<h3>Ebay ECE</h3>
+				<h3>HELLO ADMIN</h3>
 			</div>
 
 			<ul class="list-unstyled components">
-				<p>Sections</p>
+				<p>Catégories</p>
 				<li class="active">
 					<!-- data toggle = collaps c'est pour drop down menu et la class pour ajouter le petit triangle a cote -->
-					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Catégories</a>
+					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Vendeurs</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li>
-							<a href="PageFerrailleOuTresor.php">Ferrailes ou Trésor</a>
+							<a href="MenuAjoutVend.php" class = "icon-plus"> Ajouter</a>
 						</li>
 						<li>
-							<a href="PageBonPourMusee.php">Bon pour le musée</a>
-						</li>
-						<li>
-							<a href="PageVIP.php">Accesoire VIP</a>
+							<a href="MenuSuppVend.php" class = "icon-bin"> Supprimer</a>
 						</li>
 
 					</ul>
 				</li>
-
+				<li>
+					<a href="SidebarAcheteur.php">Acheteurs</a>
+				</li>
 				<li>
 					<!-- aria expanded pour definir l'etat du menu deroullant false = derme par exemple -->
-					<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Achat</a>
+					<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Produits</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
 						<li>
-							<a href="PageEnchere.php">Enchéresr</a>
+							<a href="AdmAjoutitem.php" class = "icon-plus"> Ajouter</a>
 						</li>
 						<li>
-							<a href="PageAcheterMaintenant.php">Achetez le maintenant</a>
-						</li>
-						<li>
-							<a href="PageMeilleureOffre.php">Meilleure offre</a>
+							<a href="AdmSuppitem.php" class = "icon-bin"> Supprimer</a>
 						</li>
 					</ul>
-				</li>
-
-				<li>
-					<a href="#">Vendre</a>
-				</li>
-
-				<li>
-					<a href="CompteAcheteur.php" class = "icon-user"> VotreCompte</a>
-				</li>
-
-				<li>
-					<a href="Panier.php" class = "icon-cart"> Panier</a>
-				</li>
-
-				<li>
-					<a href="AdminLogin.php" class = "icon-user" > Admin</a>
 				</li>
 				
 			</ul>
 
 			<ul class="list-unstyled CTAs">
-				
 				<li>
-					<a href="PageAccueil.php" class="backhome">EbayECE : Home</a>
+					<a href="deconnexionAdmin.php" class="download">Log Out</a>
 				</li>
-			</ul>
-
-			<ul>
-				<p>CONTACT<br>
-					37, quai de Grenelle, 75015 Paris, France <br>
-					info@ebay.ece.fr <br>
-					+33 01 02 03 04 05 <br>
-					+33 01 03 02 05 04
-				</p>
+				<li>
+					<a href="PageAccueil.php" class="backhome">Back to EbayECE</a>
+				</li>
 			</ul>
 
 		</nav>
@@ -116,15 +87,24 @@ session_start();
 
 
 
+
+
+
+
+
+
+
+
+
+
 		<!-- Page Content -->
 		<div id="content">
-			<!-- LA BARRE BLANCHE DU HAUT -->
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid">
 
 					<button type="button" id="sidebarCollapse" class="btn btn-info">
 						<i class="fas fa-align-left"></i>
-						<span>BIENVENUE CHEZ EBAY ECE</span>
+						<span>Sidebar</span>
 					</button>
 
 					<button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,61 +113,6 @@ session_start();
 
 				</div>
 			</nav>
-
-
-			<div class="container-fluid">
-
-				<div class="rowA">
-
-					<div class="col-lg-6">
-
-						<div class="card shadow mb-4">
-							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">Voici vos informations <?php echo $_SESSION['PrenomAcheteur']; ?> </h6>
-							</div>
-							<div class="card-body">
-								<p>ID : <?php echo $_SESSION['IDAcheteur']; ?> <br>
-									Nom : <?php echo $_SESSION['NomAcheteur'] ?> <br>
-									Prenom : <?php echo $_SESSION['PrenomAcheteur'] ?> <br>
-									Email : <?php echo $_SESSION['EmailAcheteur'] ?> <br>
-									MDP : <?php echo $_SESSION['MDPAcheteur'] ?> <br>
-									AdresseLigne1 : <?php echo $_SESSION['AdresseLigne1Acheteur'] ?> <br>
-									AdresseLigne2 : <?php echo $_SESSION['AdresseLigne2Acheteur'] ?> <br>
-									Ville : <?php echo $_SESSION['VilleAcheteur'] ?> <br>
-									CodePostal : <?php echo $_SESSION['CodePostalAcheteur'] ?> <br>
-									Pays : <?php echo $_SESSION['PaysAcheteur'] ?> <br>
-									Num : <?php echo $_SESSION['NumAcheteur'] ?> <br>
-									TypeCarte : <?php echo $_SESSION['TypeCarteAcheteur'] ?> <br>
-									NumCarte : <?php echo $_SESSION['NumCarteAcheteur'] ?> <br>
-									NomCarte : <?php echo $_SESSION['NomCarteAcheteur'] ?> <br>
-									DatedExp : <?php echo $_SESSION['DatedExpAcheteur'] ?> <br>
-									CodeSecu : <?php echo $_SESSION['CodeSecuAcheteur'] ?> <br>
-								</p>
-
-							</div>
-						</div>
-
-						
-
-					</div>
-				</div>
-
-
-			</div>
-
-			<!-- Footer -->
-			<footer class="sticky-footer ">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>&copy; 2020 Copyright | Droit d'auteur: Tim et Dany</span>
-						<a href="mailto:dany.tadrous.edu.ece.fr">dany.tadrous@edu.ece.fr</a>
-
-					</div>
-				</div>
-			</footer>
-			<!-- FIN DU Footer -->
-
-
 		</div>
 
 	</div>   
@@ -222,4 +147,3 @@ session_start();
 
 </body>
 </html>
-

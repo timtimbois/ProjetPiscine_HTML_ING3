@@ -1,83 +1,5 @@
 <?php
 session_start();
-try {
-	$bdd = new PDO('mysql:host=localhost;dbname=projetpiscineweb;charset=utf8', 'root', 'root');
-}
-catch (Exception $e){
-	die('Erreur : ' . $e->getMessage());
-}
-if ($_POST['buttonlog2']) {
-	$InputLogin = ($_POST['Login']);
-	$InputMDP = ($_POST['MDP']);
-	$InputType = ($_POST['type']);
-
-	$Radio = ($_POST['radio']);
-
-	
-	if ($Radio=="Acheteur") {
-
-		if (!empty($InputLogin) AND !empty($InputMDP)) {
-			$reqconach = $bdd->prepare('SELECT * FROM acheteur where EmailAcheteur = ? AND MDPAcheteur = ?');
-			$reqconach->execute(array($InputLogin, $InputMDP));
-
-			$AcheteurExist = $reqconach->rowCount();
-
-			if ($AcheteurExist == 1) {
-				$AcheteurInfo = $reqconach->fetch();
-				$_SESSION['PrenomAcheteur']= $AcheteurInfo['PrenomAcheteur'];
-				$_SESSION['IDAcheteur'] = $AcheteurInfo['IDAcheteur'];
-				$_SESSION['NomAcheteur'] = $AcheteurInfo['NomAcheteur'];
-				$_SESSION['EmailAcheteur'] = $AcheteurInfo['EmailAcheteur'];
-				$_SESSION['MDPAcheteur'] = $AcheteurInfo['MDPAcheteur'];
-				$_SESSION['AdresseLigne1Acheteur'] = $AcheteurInfo['AdresseLigne1Acheteur'];
-				$_SESSION['AdresseLigne2Acheteur'] = $AcheteurInfo['AdresseLigne2Acheteur'];
-				$_SESSION['VilleAcheteur'] = $AcheteurInfo['VilleAcheteur'];
-				$_SESSION['CodePostalAcheteur'] = $AcheteurInfo['CodePostalAcheteur'];
-				$_SESSION['PaysAcheteur'] = $AcheteurInfo['PaysAcheteur'];
-				$_SESSION['NumAcheteur'] = $AcheteurInfo['NumAcheteur'];
-				$_SESSION['TypeCarteAcheteur'] = $AcheteurInfo['TypeCarteAcheteur'];
-				$_SESSION['NumCarteAcheteur'] = $AcheteurInfo['NumCarteAcheteur'];
-				$_SESSION['NomCarteAcheteur'] = $AcheteurInfo['NomCarteAcheteur'];
-				$_SESSION['DatedExpAcheteur'] = $AcheteurInfo['DatedExpAcheteur'];
-				$_SESSION['CodeSecuAcheteur'] = $AcheteurInfo['CodeSecuAcheteur'];
-
-				header("Location: PageConnecté.php");
-			} else {
-				$Erreur = "mail ou mdp incorrect";
-				
-			}
-		}else {
-			$Erreur = "Tous les champs doivent être complétés !";
-		}
-	}else{
-
-
-		if (!empty($InputLogin) AND !empty($InputMDP)) {
-			$reqconvend = $bdd->prepare('SELECT * FROM vendeur where EmailVendeur = ? AND PseudoVendeur = ?');
-			$reqconvend->execute(array($InputLogin, $InputMDP));
-
-			$VendeurExist = $reqconvend->rowCount();
-
-			if ($VendeurExist == 1) {
-				$VendeurInfo = $reqconvend->fetch();
-				$_SESSION['NomVendeur']= $VendeurInfo['NomVendeur'];
-				$_SESSION['IDVendeur'] = $VendeurInfo['IDVendeur'];
-				$_SESSION['PseudoVendeur'] = $VendeurInfo['PseudoVendeur'];
-				$_SESSION['EmailVendeur'] = $VendeurInfo['EmailVendeur'];
-				$_SESSION['PhotoVendeur'] = $VendeurInfo['PhotoVendeur'];
-				$_SESSION['ImageVendeur'] = $VendeurInfo['ImageVendeur'];
-
-				header("Location: PageConnecté1.php");
-			} else {
-				$Erreur = "mail ou mdp incorrect";
-			}
-		}else {
-			$Erreur = "Tous les champs doivent être complétés !";
-		}
-	}
-
-}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,7 +8,7 @@ if ($_POST['buttonlog2']) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>EbayECE : Log in - Sign in</title>
+	<title>EbayECE : Acceuil</title>
 
 
 	<!-- Bootstrap CSS CDN -->
@@ -105,14 +27,12 @@ if ($_POST['buttonlog2']) {
 	<!-- LIEN CSS POUR AVOIR LES ICONES TELECHARGÉES DEPUIS ICOMOON -->
 	<link href="style.css" rel="stylesheet">
 
-
 </head>
 
 <body >
 
 	<!-- SIDEBAR -->
 	<div class="wrapper">
-
 		<!-- Sidebar -->
 		<nav id="sidebar">
 			<div class="sidebar-header">
@@ -169,11 +89,11 @@ if ($_POST['buttonlog2']) {
 				<li>
 					<a href="AdminLogin.php" class = "icon-user"> Admin</a>
 				</li>
-
+				
 			</ul>
 
 			<ul class="list-unstyled CTAs">
-
+				
 				<li>
 					<a href="PageAccueil.php" class="backhome">EbayECE : Home</a>
 				</li>
@@ -201,7 +121,7 @@ if ($_POST['buttonlog2']) {
 
 					<button type="button" id="sidebarCollapse" class="btn btn-info">
 						<i class="fas fa-align-left"></i>
-						<span>BIENVENUE CHEZ EBAY ECE </span>
+						<span>BIENVENUE CHEZ EBAY ECE</span>
 					</button>
 
 					<button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -218,72 +138,21 @@ if ($_POST['buttonlog2']) {
 					<div class="col-lg-6">
 						<div class="card shadow mb-4">
 							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">Formulaire de connexion</h6>
+								<h6 class="m-0 font-weight-bold text-primary">Message de bienvenue</h6>
 							</div>
+
 							<div class="card-body">
-								<form action="PageLoginn.php" method="post">
-									<table>
-										<tr>
-											<td>E-mail :</td>
-											<td><input type="text" class="form-control" name="Login"></td>
-										</tr>
+								<p>EBAY ECE</p>
+								<p>Et vous, vous achetez comment ?</p>
+								<p>Buy it. Sell it. Love it</p>
+								<p>Achetez et vendez des produits qui vous conviennent</p>
 
-										<tr>
-											<td>Mot de passe :</td>
-											<td><input type="password" class="form-control" name="MDP"></td>
-										</tr>
-
-										<tr>
-											<td>Type d'utilisateur :</td>
-											<td>
-												<input type="radio" name="radio" value="Acheteur">Acheteur
-												<input type="radio" name="radio" value="Vendeur">Vendeur
-											</td>
-										</tr>
-
-										<tr>
-											<td colspan="2" align="center">
-												<input type="submit" class ="btn btn-primary"name="buttonlog2" value="Connexion">
-											</td>
-
-										</tr>
-									</table>
-									<?php
-									if (isset($Erreur)) {
-										echo '<font color="red">'.$Erreur.'</font>';
-									}
-									?>
-								</form>
-
-
+								<a href="PageLoginn.php"><input type="submit" name="btcon" class="btn btn-primary " value="Login"></a>
 
 							</div>
-						</div>
+						</div>              
 					</div>
 				</div>
-
-
-				<div class="rowA">
-					<div class="col-lg-6">
-						<div class="card shadow mb-4">
-							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">Formulaire d'inscription</h6>
-							</div>
-							<div class="card-body">
-								<p>Veuillez choisir entre vous inscrire ent tant qu'acheteur ou en tant que vendeur</p>
-								<br>
-								<br>
-								<a href="InscriptionAcheteur.php"><button class="btn btn-primary">Acheteur</button></a>
-								<br>
-								<a href="InscriptionVendeur.php"><button class="btn btn-primary">Vendeur</button></a>
-
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-
 			</div>
 
 			<!-- Footer -->

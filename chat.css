@@ -1,0 +1,28 @@
+
+
+/*PETIT CSS POUR LA MISE EN PAGE DU CHAT */
+
+.messages {
+  background-color: #adadeb; /* #adadeb OR STEELBLUE JE SAIS PAS */
+  border-radius: 5px;
+  padding: 1em;
+  height: 15vh;
+  overflow: auto;
+}
+
+.message {
+  color: white;
+  padding: 0.3em;
+}
+
+.date, .author {
+  font-weight: bold;
+}
+
+#author {
+  width: 20%;
+}
+
+button[type="submit"]{
+  width: 20%;
+}

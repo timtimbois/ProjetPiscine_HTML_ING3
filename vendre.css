@@ -1,33 +1,33 @@
-/* AIDE TUTO BOOSTRAPIUS*/
+/*AIDE TUTO BOOTSRAPIOUS*/
 
 /* PAGE ACCUEIL . HTML */
 
 body {
-	padding: 0px;
-	margin: 0px;
-	background: #f2f6e9;
+  padding: 0px;
+  margin: 0px;
+  background: #f2f6e9;
 }
 
 h1{
-	text-align: center;
-	padding-top: 20px; 
-	padding-bottom: 20px;
+  text-align: center;
+  padding-top: 20px; 
+  padding-bottom: 20px;
 }
 
 a{
-	display : block;
-	margin: auto;
+  display : block;
+  margin: auto;
 }
 
 .button {
-	background-color: #e0e0eb;
-   	border : 2px solid;
-   	border-color: #aa80ff;
-   	text-align: center;
-   	font-size: 20px;
-   	cursor: pointer;
-   	transition-duration: 0.4s;
-   	/*float: left;*/
+  background-color: #e0e0eb;
+    border : 2px solid;
+    border-color: #aa80ff;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    /*float: left;*/
 }
 
 .button:hover {
@@ -37,25 +37,25 @@ a{
 
 
 #btn-group {
-	float: left;
-	text-align: center;
-	background:#e0e0eb;
-	margin-left: auto;
-  	margin-right: auto;
-  	width: 1439px;
+  float: left;
+  text-align: center;
+  background:#e0e0eb;
+  margin-left: auto;
+    margin-right: auto;
+    width: 1439px;
 }
 
 #header {
-	background:#ccccff;
+  background:#ccccff;
 }
 
 #section {
-	text-align: center;
-	color: #e0e0eb;
-	height: 700px;
-	background-image: url("deal.jpg");
-	background-size: cover;
-	background-position: center;
+  text-align: center;
+  color: #e0e0eb;
+  height: 700px;
+  background-image: url("deal.jpg");
+  background-size: cover;
+  background-position: center;
 
 }
 
@@ -64,19 +64,19 @@ a{
 }
 
 .page-footer {
-	background-color: #222;
-	color: #ccc;
-	padding: 5px  30px;
+  background-color: #222;
+  color: #ccc;
+  padding: 5px  30px;
 }
 .footer-copyright {
-	color: #666;
-	padding: 20px 0;
-	text-align: center;
+  color: #666;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .text-up {
-	font-weight: bolder;
-	font-size: 13px;
+  font-weight: bolder;
+  font-size: 13px;
 }
 
 
@@ -84,23 +84,6 @@ a{
 
 
 /**/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*BORDER DE LA CARTE ET DES CHAMPS*/
 *,
@@ -133,12 +116,12 @@ a {
 
 
 /*LARGEUR DE LA CARTE BLANCHE POUR BIEN LA CENTRER*/
-.row {
+/*.row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -0.75rem;
   margin-left: -0.75rem;
-}
+}*/
 
 /*FORME DES CHAMPS DE TEXTE*/
 .form-control {
@@ -205,8 +188,8 @@ a {
 /*CREATION DE LA CARTE BLANCHE */
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  /*display: flex;*/
+  /*flex-direction: column;*/
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
@@ -309,9 +292,7 @@ a:focus {
     margin: 40px 0;
 }
 
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
+/*STYLE DE LA SIDEBAR*/
 
 /*PLACEMENT DU BOUTON*/
 .wrapper {
@@ -421,9 +402,6 @@ a.backhome:hover {
     color: #fff !important;
 }
 
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
 
 #content {
     width: calc(100% - 250px);
@@ -439,9 +417,6 @@ a.backhome:hover {
     width: 100%;
 }
 
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
 
 /*MEDIA QUERY*/
 /*REVERSE THE ACTIVE STYLE, CACHER LA SIDEBAR AU LIEU D'APPARAITRE PAR DEFAULT*/
@@ -476,9 +451,9 @@ a.backhome:hover {
 
 /*LARGEUR DE LA CARTE BLANCHE POUR BIEN LA CENTRER*/
 .rowA {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -48rem;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  margin-right: -73rem;
   margin-left: -2rem;
 }
 
@@ -514,7 +489,7 @@ a.backhome:hover {
   color: #fff;
   background-color: #80ff80;
   position: relative;
-  left: 65%;
+  left: 45%;
 
 }
 .btn-ajout:hover {
@@ -525,10 +500,4 @@ a.backhome:hover {
 .tex{
   color: black;
 }
-
-
-
-
-
-
 

@@ -24,6 +24,8 @@ session_start();
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+	<!-- LIEN CSS POUR AVOIR LES ICONES TELECHARGÉES DEPUIS ICOMOON -->
+	<link href="style.css" rel="stylesheet">
 
 </head>
 
@@ -45,13 +47,13 @@ session_start();
 					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Catégories</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li>
-							<a href="#">Ferrailes ou Trésor</a>
+							<a href="PageFerrailleOuTresor.php">Ferrailes ou Trésor</a>
 						</li>
 						<li>
-							<a href="#">Bon pour le musée</a>
+							<a href="PageBonPourMusee.php">Bon pour le musée</a>
 						</li>
 						<li>
-							<a href="#">Accesoire VIP</a>
+							<a href="PageVIP.php">Accesoire VIP</a>
 						</li>
 
 					</ul>
@@ -62,13 +64,13 @@ session_start();
 					<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Achat</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
 						<li>
-							<a href="#">Enchéresr</a>
+							<a href="PageEnchere.php">Enchéresr</a>
 						</li>
 						<li>
-							<a href="#">Achetez le maintenant</a>
+							<a href="PageAcheterMaintenant.php">Achetez le maintenant</a>
 						</li>
 						<li>
-							<a href="#">Meilleure offre</a>
+							<a href="PageMeilleureOffre.php">Meilleure offre</a>
 						</li>
 					</ul>
 				</li>
@@ -78,15 +80,15 @@ session_start();
 				</li>
 
 				<li>
-					<a href="#">VotreCompte</a>
+					<a href="CompteAcheteur.php" class = "icon-user"> VotreCompte</a>
 				</li>
 
 				<li>
-					<a href="#">Panier</a>
+					<a href="#" class = "icon-cart"> Panier</a>
 				</li>
 
 				<li>
-					<a href="AdminLogin.php">Admin</a>
+					<a href="AdminLogin.php" class = "icon-user"> Admin</a>
 				</li>
         
     </ul>
@@ -94,7 +96,7 @@ session_start();
     <ul class="list-unstyled CTAs">
     	
     	<li>
-    		<a href="PageAccueill.php" class="backhome">EbayECE : Home</a>
+    		<a href="PageAccueil.php" class="backhome">EbayECE : Home</a>
     	</li>
     </ul>
 
@@ -139,10 +141,12 @@ session_start();
 
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Bonjour <?php echo $_SESSION['PseudoVendeur']; ?></h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Bonjour <?php echo $_SESSION['PrenomAcheteur']; ?> </h6>
                 </div>
                 <div class="card-body">
-                	<p>Bienvenue sur votre compte ! Je vous laisse profiter du site. Bonnes ventes à vous </p>
+                	<p>Bienvenue sur votre compte ! Je vous laisse profiter du site. Bonnes ventes à vous ACHETEUR</p>
+
+                	<a href="ChatOffre.php" class = "icon-bubbles" ><input type="submit" name="boutonoffre" class="btn btn-primary" value=" FAIRE OFFRE"></a>
 
                 </div>
               </div>

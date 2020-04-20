@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +5,14 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>EbayECE : Votre Compte</title>
+	<title>EbayECE : Admin</title>
 
 
 	<!-- Bootstrap CSS CDN -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
 	<!-- MAKE A LINK WITH THE CSS TO CUSTOME IT -->
-	<link href="index1.css" rel="stylesheet">
+	<link href="AdminLogin.css" rel="stylesheet">
 
 	<!-- SCROLLBAR CUSTOM CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -27,7 +24,6 @@ session_start();
 	<!-- LIEN CSS POUR AVOIR LES ICONES TELECHARGÉES DEPUIS ICOMOON -->
 	<link href="style.css" rel="stylesheet">
 
-
 </head>
 
 <body >
@@ -38,76 +34,49 @@ session_start();
 		<!-- Sidebar -->
 		<nav id="sidebar">
 			<div class="sidebar-header">
-				<h3>Ebay ECE</h3>
+				<h3>HELLO ADMIN</h3>
 			</div>
 
 			<ul class="list-unstyled components">
-				<p>Sections</p>
+				<p>Catégories</p>
 				<li class="active">
 					<!-- data toggle = collaps c'est pour drop down menu et la class pour ajouter le petit triangle a cote -->
-					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Catégories</a>
+					<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Vendeurs</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li>
-							<a href="#">Ferrailes ou Trésor</a>
+							<a href="MenuAjoutVend.php" class = "icon-plus"> Ajouter</a>
 						</li>
 						<li>
-							<a href="#">Bon pour le musée</a>
-						</li>
-						<li>
-							<a href="#">Accesoire VIP</a>
+							<a href="MenuSuppVend.php" class = "icon-bin"> Supprimer</a>
 						</li>
 
 					</ul>
 				</li>
-
+				<li>
+					<a href="SidebarAcheteur.php">Acheteurs</a>
+				</li>
 				<li>
 					<!-- aria expanded pour definir l'etat du menu deroullant false = derme par exemple -->
-					<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Achat</a>
+					<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Produits</a>
 					<ul class="collapse list-unstyled" id="pageSubmenu">
 						<li>
-							<a href="#">Enchéresr</a>
+							<a href="AdmAjoutitem.php" class = "icon-plus"> Ajouter</a>
 						</li>
 						<li>
-							<a href="#">Achetez le maintenant</a>
-						</li>
-						<li>
-							<a href="#">Meilleure offre</a>
+							<a href="AdmSuppitem.php" class = "icon-bin"> Supprimer</a>
 						</li>
 					</ul>
-				</li>
-
-				<li>
-					<a href="PageVendre.php">Vendre</a>
-				</li>
-
-				<li>
-					<a href="CompteVendeur.php" class = "icon-user"> VotreCompte</a>
-				</li>
-
-				<li>
-					<a href="#" class = "icon-cart"> Panier</a>
-				</li>
-
-				<li>
-					<a href="AdminLogin.php" class = "icon-user"> Admin</a>
 				</li>
 				
 			</ul>
 
 			<ul class="list-unstyled CTAs">
-				
 				<li>
-					<a href="PageAccueil.php" class="backhome">EbayECE : Home</a>
+					<a href="deconnexionAdmin.php" class="logout">Log Out</a>
 				</li>
-			</ul>
-
-			<ul>
-				<p>CONTACT<br>
-					37, quai de Grenelle, 75015 Paris, France <br>
-					info@ebay.ece.fr <br>
-					+33 01 02 03 04 05 <br>
-					+33 01 03 02 05 04
-				</p>
+				<li>
+					<a href="PageAccueil.php" class="backhome">Back to EbayECE</a>
+				</li>
 			</ul>
 
 		</nav>
@@ -115,15 +84,24 @@ session_start();
 
 
 
+
+
+
+
+
+
+
+
+
+
 		<!-- Page Content -->
 		<div id="content">
-			<!-- LA BARRE BLANCHE DU HAUT -->
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid">
 
 					<button type="button" id="sidebarCollapse" class="btn btn-info">
 						<i class="fas fa-align-left"></i>
-						<span>BIENVENUE CHEZ EBAY ECE</span>
+						<span>Sidebar</span>
 					</button>
 
 					<button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,38 +120,63 @@ session_start();
 
 						<div class="card shadow mb-4">
 							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">Voici vos informations Monsieur <?php echo $_SESSION['NomVendeur']; ?> </h6>
+								<h6 class="m-0 font-weight-bold text-primary">Liste Des Vendeurs</h6>
 							</div>
 							<div class="card-body">
-								<p>ID : <?php echo $_SESSION['IDVendeur'] ?> <br>
-									Pseudo: <?php echo $_SESSION['PseudoVendeur']; ?> <br>
-									Email: <?php echo $_SESSION['EmailVendeur']; ?>  <br>
-									Nom:  <?php echo $_SESSION['NomVendeur']; ?> <br>
-									Photo: <?php echo $_SESSION['PhotoVendeur']; ?> <br>
-									Image Favoris: <?php echo $_SESSION['ImageVendeur']; ?></p>
 
+								<p>---- PSEUDO ---- EMAIL ---- NOM ---- </p>
+
+
+								<?php
+
+								try {
+									$bdd = new PDO('mysql:host=localhost;dbname=projetpiscineweb;charset=utf8', 'root', 'root');
+								}
+								catch (Exception $e){
+									die('Erreur : ' . $e->getMessage());
+								}
+
+
+								$req = $bdd->prepare('SELECT IDVendeur, PseudoVendeur, EmailVendeur, NomVendeur FROM vendeur');
+
+								$req->execute();
+
+								?>
+
+								<div id="GroupeAch"> 
+									<?php
+
+									while ($data = $req->fetch()) {
+										echo '<li><p id="Pseudo">'.$data['PseudoVendeur'].'</p>'.'<p id="Email">'.$data['EmailVendeur'].'</p>'.'<p id="Nom">'.$data['NomVendeur'].'</p></li>';
+
+
+										echo '<form method="post" action="MenuSuppVend.php">'.
+										'<input type="hidden" name="IDVendeur" value='.$data['IDVendeur'].'>'.
+										'<input type="submit" value="SUPPRIMER" class="btn btn-supp" onClick="history.go(0)">'.
+										'</form>';
+
+									}
+
+
+									?>
 								</div>
+
+								<?php
+								$req->closeCursor();
+
+								$req = $bdd->prepare('DELETE FROM vendeur WHERE IDVendeur="'.$_POST['IDVendeur'].'"');
+								$req-> execute();
+								$req-> closeCursor();
+
+								?>
+
 							</div>
-
-							
-
 						</div>
+
+
+
 					</div>
-
-
 				</div>
-
-				<!-- Footer -->
-				<footer class="sticky-footer ">
-					<div class="container my-auto">
-						<div class="copyright text-center my-auto">
-							<span>&copy; 2020 Copyright | Droit d'auteur: Tim et Dany</span>
-							<a href="mailto:dany.tadrous.edu.ece.fr">dany.tadrous@edu.ece.fr</a>
-
-						</div>
-					</div>
-				</footer>
-				<!-- FIN DU Footer -->
 
 
 			</div>
